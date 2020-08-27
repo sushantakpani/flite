@@ -115,6 +115,7 @@ cst_val *cmu_indic_tokentowords(cst_item *token) {
 #include "indic_tel_num_table.h"
 #include "indic_tam_num_table.h"
 #include "indic_pan_num_table.h"
+#include "indic_odi_num_table.h"
 
 
 int ts_utf8_sequence_length(char c0);
@@ -156,7 +157,7 @@ int indic_digit_to_offset(const char *ind_digit)
     offset = 0x0A66;
   if ((i >= 0x0AE6) && (i <= 0x0AEF))   /*Gujarati*/
     offset = 0x0AE6;
-  if ((i >= 0x0B66) && (i <= 0x0B6F))   /*Oriya*/
+  if ((i >= 0x0B66) && (i <= 0x0B6F))   /*Odia*/
     offset = 0x0B66;
   if ((i >= 0x0BE6) && (i <= 0x0BEF))   /*Tamil*/
     offset = 0x0BE6;
@@ -561,6 +562,8 @@ static cst_val *cmu_indic_tokentowords_one(cst_item *token, const char *name)
         num_table = &tam_num_table;
     else if (cst_streq(variant,"tel"))
         num_table = &tel_num_table;
+    else if (cst_streq(variant,"odi"))
+        num_table = &odi_num_table;
     else
         num_table = &eng_num_table;
 
