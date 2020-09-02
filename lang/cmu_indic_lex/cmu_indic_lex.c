@@ -45,7 +45,7 @@
 
 extern cst_lexicon cmu_lex;
 
- int utf8_sequence_length(char c0);
+int utf8_sequence_length(char c0);
 
 static const struct cmu_indic_char cmu_indic_offset_char[128] = {
   /*000*/ {IND_IGNORE, ""},
@@ -304,6 +304,12 @@ static const char *cmu_indic_get_char_phoneme(const cst_val *indic_char)
     if ((c == 0x0D13)||(c == 0x0D4B)) return "o:";
     if (c == 0x0D34) return "zr"; /* Retroflex approximant */
     if (c == 0x0D31) return "rr"; /* Retroflex flap */
+    /* Odia */
+    if ((c == 0x0B08)||(c == 0x0B40)) return "i";   /*long "i:" as "i" for vowel and matra*/
+    if ((c == 0x0B0A)||(c == 0x0B42)) return "u";   /*long "u:" as "u" for vowel and matra*/
+    if ((c == 0x0B36)||(c == 0x0B37)) return "s";   /* "c}" and "sr" as s */
+    if ((c == 0x0B2F) return "J";                   /* "antstha J 0B2F ଯ" as "barrgya J  0B1C ଜ" */
+    if ((c == 0x0B71) return "v";                   /* "wa ୱ" as "v ଵ  0B35" */
     /* Punjabi */
     if (c == 0x0A33) return "l";
     /* Tamil */
@@ -313,7 +319,6 @@ static const char *cmu_indic_get_char_phoneme(const cst_val *indic_char)
     if (c == 0x0BA9) return "n"; /* Tamil alveolar nasal */
     if (c == 0x0BB1) return "rr";
     if (c == 0x0BB4) return "zr";
-    
     /* Telugu */
     if ((c == 0x0C0F)||(c == 0x0C47)) return "e:";
     if (c == 0x0C12) return "o";
@@ -362,6 +367,11 @@ static cst_val *cmu_indic_lex_map_nukta_chars(const cst_val *indic_ords) {
         case 2465: mapped_val=2524; break;
         case 2566: mapped_val=2525; break;
         case 2479: mapped_val=2527; break;
+          
+	  /* Odia */
+        case 2849: mapped_val=2908; break;//( "ଡ" 2849 )>>( "ଡ଼" 2908 ) 
+        case 2850: mapped_val=2909; break;//( "ଢ" 2850 ) >>( "ଢ଼" 2909 )
+
 
             /* Tamil */
         case 2962: mapped_val=2964; break;
