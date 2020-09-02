@@ -33,8 +33,8 @@
 /*  Number pronunciation for (Odia) Indic                             */
 /*************************************************************************/
 
-#ifndef _indic_odi_num_table_h_
-#define _indic_odi_num_table_h_
+#ifndef _indic_ori_num_table_h_
+#define _indic_ori_num_table_h_
 
 #ifdef __cplusplus
 extern "C" {
@@ -152,7 +152,7 @@ static const char * const indic_odi_two_digit[101][4] =
 };
 
 const static indic_num_table odi_num_table = {
-    "odi",
+    "ori",
     &indic_odi_digit,
     &indic_odi_two_digit,
     "ଶହ",   /* hundred */
