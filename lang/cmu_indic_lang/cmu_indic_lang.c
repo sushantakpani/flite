@@ -115,7 +115,7 @@ cst_val *cmu_indic_tokentowords(cst_item *token) {
 #include "indic_tel_num_table.h"
 #include "indic_tam_num_table.h"
 #include "indic_pan_num_table.h"
-#include "indic_odi_num_table.h"
+#include "indic_ori_num_table.h"
 
 
 int ts_utf8_sequence_length(char c0);
@@ -562,8 +562,8 @@ static cst_val *cmu_indic_tokentowords_one(cst_item *token, const char *name)
         num_table = &tam_num_table;
     else if (cst_streq(variant,"tel"))
         num_table = &tel_num_table;
-    else if (cst_streq(variant,"odi"))
-        num_table = &odi_num_table;
+    else if (cst_streq(variant,"ori"))
+        num_table = &ori_num_table;
     else
         num_table = &eng_num_table;
 
