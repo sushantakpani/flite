@@ -41,7 +41,7 @@ extern "C" {
 #endif /* __cplusplus */
 
 #include "indic_num_table.h"
-static const char * const indic_odi_digit[11][2] =
+static const char * const indic_ori_digit[11][2] =
 {
     { "୦", "ଶୂନ" },
     { "୧", "ଏକ" },
@@ -56,7 +56,7 @@ static const char * const indic_odi_digit[11][2] =
     { NULL, NULL },
 };
 
-static const char * const indic_odi_two_digit[101][4] =
+static const char * const indic_ori_two_digit[101][4] =
 {
     { "୧", "୦", "ଦଶ", NULL },
     { "୧", "୧", "ଏଗାର", NULL },
@@ -151,7 +151,7 @@ static const char * const indic_odi_two_digit[101][4] =
     { NULL, NULL },
 };
 
-const static indic_num_table odi_num_table = {
+const static indic_num_table ori_num_table = {
     "ori",
     &indic_odi_digit,
     &indic_odi_two_digit,
