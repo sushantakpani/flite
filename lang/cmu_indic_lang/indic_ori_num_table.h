@@ -39,7 +39,7 @@
 #ifdef __cplusplus
 extern "C" {
 #endif /* __cplusplus */
-
+//ori used as langauge code
 #include "indic_num_table.h"
 static const char * const indic_ori_digit[11][2] =
 {
