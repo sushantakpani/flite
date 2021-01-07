@@ -43,7 +43,7 @@ extern "C" {
 #include "indic_num_table.h"
 static const char * const indic_ori_digit[11][2] =
 {
-    { "୦", "ଶୂନ" },
+    { "୦", "ଶୂନ୍" },
     { "୧", "ଏକ" },
     { "୨", "ଦୁଇ" },
     { "୩", "ତିନି" },
@@ -167,4 +167,3 @@ const static indic_num_table ori_num_table = {
 #endif /* __cplusplus */
 
 #endif
-
